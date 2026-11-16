@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-hf-001",
+  "title": "Educational HF layer and noise scenario comparison",
+  "owner": "example-only",
+  "hypothesis": "A simplified flat-layer secant cutoff varies with declared virtual height and path geometry; declared in-band noise changes reference SNR without changing the cutoff.",
+  "protocol_reference": "docs/MODEL.md; educational arithmetic fixture only",
+  "differentiation": "No novel HF method is established. This fixture uses established simplified relationships; literature/program review and real channel validation remain required.",
+  "data_kind": "synthetic",
+  "link": {"tx_power_dbm": 30, "tx_gain_dbi": 0, "rx_gain_dbi": 0, "system_loss_db": 2, "required_snr_db": 10, "noise_bandwidth_hz": 3000, "frequencies_mhz": [3, 5, 10, 20], "ground_distances_km": [0, 100, 300, 500]},
+  "scenarios": [
+    {"id": "reference", "label": "Fictional reference virtual layer", "virtual_height_km": 250, "critical_frequency_mhz": 5, "inband_noise_dbm": -100, "additional_loss_db": 10, "assumption_reference": "Illustrative virtual layer and total noise in declared bandwidth; not ionosonde or environmental data"},
+    {"id": "noisier", "label": "Fictional 10 dB higher in-band noise", "virtual_height_km": 250, "critical_frequency_mhz": 5, "inband_noise_dbm": -90, "additional_loss_db": 10, "assumption_reference": "Sensitivity fixture; noise changes only, not a time/weather forecast"},
+    {"id": "higher-layer", "label": "Fictional higher virtual layer", "virtual_height_km": 350, "critical_frequency_mhz": 5, "inband_noise_dbm": -100, "additional_loss_db": 10, "assumption_reference": "Geometry sensitivity fixture; no real ionospheric profile"}
+  ],
+  "sounding": {"assumed_round_trip_delays_ms": [1, 1.5, 2], "timing_uncertainty_us": 10, "assumption_reference": "Assumed vertical round-trip group delays; virtual height convention, not true-height inversion or detected echoes"},
+  "measurements": [],
+  "evidence": []
+}
