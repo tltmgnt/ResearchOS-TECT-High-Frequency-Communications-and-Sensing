@@ -68,3 +68,13 @@ Existing output directories are rejected. Verification checks hashes, evidence-t
 - [Contributing](CONTRIBUTING.md)
 
 CI installs the package, runs tests and the complete example workflow, and uploads its synthetic bundle on Python 3.10–3.13. The existing [license](LICENSE) is preserved.
+
+## Interactive browser app
+
+The `web/` directory contains a local-first HF scenario editor, toy-cutoff and reference-SNR plots, frequency selection, virtual-height charts, experiment library/imports, parameter templates, evidence checksum tools and JSON/CSV/Markdown exports. Calculations run in a background worker. Serve with `python -m http.server 8000 --directory web`, then open `http://localhost:8000`. Use localhost or HTTPS for modules, workers and Web Crypto. Run web-model checks with `node web/tests/model.test.mjs`.
+
+Records stay in the current browser and origin; export regularly. No cross-device, GitHub or CLI synchronization is configured. Record JSON exports work with the CLI. Browser results/reports are summaries, not complete CLI evidence bundles. Original files are not uploaded, retained or automatically re-verified on import/reload. The form creates synthetic/simulation records; experimental records can be imported with their measurements/evidence declarations. Reusing parameters as a new record changes experimental input basis to simulation and omits source measurements/evidence, leaving the original saved record intact.
+
+The web model is checked against Python across ordinary and boundary geometry/delay cases. Floating-point differences may still affect exact boundary decisions. All app calculations remain educational, not propagation forecasts or frequency recommendations.
+
+Private hosted app: https://researchos-tect-hf.troturn31.chatgpt.site
